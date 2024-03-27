@@ -4,8 +4,8 @@ apply plugin: 'java'
 idea {
     project {
         //Set specific jdk and language level
-        jdkName = '1.8'
-        languageLevel = '1.8'
+        jdkName = '17'
+        languageLevel = '17'
     }
     module {
         downloadSources = true
@@ -14,7 +14,7 @@ idea {
 //
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(8)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 
@@ -24,7 +24,7 @@ repositories {
 
     // GitHub Packages
     maven {
-        def packageReaderSecret = "Z2hwX2Y0TDdnY25pY1NvQzJkRWlhSkhXSzZvdzY2Q1FQTTRmRkE2Nw=="
+        def packageReaderSecret = "Z2l0aHViX3BhdF8xMUFGNkRFQUkwOHY3QTJDNEJLeW1jX3hibDdvYjk3SEE2ejhpMEhZQndYVkd2amx0WEc5ckwzeU4xWGNnZlE1bnZON00zSDZENUtxUDJtenow"
         def packageReaderToken = new String(packageReaderSecret.decodeBase64())
         url = uri("https://maven.pkg.github.com/FacultadDeIngenieria/*")
         credentials {
@@ -36,7 +36,7 @@ repositories {
 
 dependencies {
     /* Compile scope */
-    implementation 'ar.edu.austral.fi.algorithms:algorithms-base:1.0.0'
+    implementation 'ar.edu.austral.fi.algorithms:algorithms-base:1.0.5'
     implementation 'org.jetbrains:annotations:22.0.0'
 
     /* Test scope */

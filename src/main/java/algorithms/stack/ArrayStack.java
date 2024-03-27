@@ -2,7 +2,9 @@ package algorithms.stack;
 
 import org.jetbrains.annotations.NotNull;
 
-public class ArrayStack<E> implements Stack<E>{
+import java.util.Iterator;
+
+public class ArrayStack<E> implements Stack<E> {
     @Override
     public void push(@NotNull E item) {
         throw new RuntimeException("Not implemented");
@@ -20,6 +22,12 @@ public class ArrayStack<E> implements Stack<E>{
 
     @Override
     public int size() {
+        throw new RuntimeException("Not implemented");
+    }
+
+    @NotNull
+    @Override
+    public Iterator<E> iterator() {
         throw new RuntimeException("Not implemented");
     }
 }
