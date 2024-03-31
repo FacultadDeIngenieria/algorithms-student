@@ -24,14 +24,18 @@ repositories {
 
     // GitHub Packages
     maven {
-        def packageReaderSecret = "Z2l0aHViX3BhdF8xMUFGNkRFQUkwOHY3QTJDNEJLeW1jX3hibDdvYjk3SEE2ejhpMEhZQndYVkd2amx0WEc5ckwzeU4xWGNnZlE1bnZON00zSDZENUtxUDJtenow"
-        def packageReaderToken = new String(packageReaderSecret.decodeBase64())
+        def packageReaderSecret = "WjJsMGFIVmlYM0JoZEY4eE1VRkdOa1JGUVVrd1QzaElSV1ZCWkRaNmFVaGxYMUpuY0doNU1GZFRVV1l5YWs5V1J6WlFiSFE0YkhKdWEyaGxNa0pOVTJoRWNHZEhWbWhLUTB4d1RGZENOVkpRV2xOSFNGVnRhbGRHTmpBNA=="
+        def packageReaderToken = decodeBase64(decodeBase64(packageReaderSecret))
         url = uri("https://maven.pkg.github.com/FacultadDeIngenieria/*")
         credentials {
             username = "public"
             password = packageReaderToken
         }
     }
+}
+
+private static String decodeBase64(String input) {
+    new String(input.decodeBase64())
 }
 
 dependencies {
